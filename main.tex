@@ -1,0 +1,119 @@
+% 
+% # Main Article Latex 
+% 
+% Solely sets up packages, formatting, meta-data, and the like. 
+% All content is offloaded to markdown-package-read `article.md`. 
+% 
+
+% Header content from IEEE
+\documentclass[twoside,9pt,journal,letterpage]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{placeins}
+\usepackage{tabularx}
+\usepackage{svg}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Header content from Overleaf's Markdown example
+\usepackage[fencedCode,citations,definitionLists,hashEnumerators,smartEllipses,pipeTables,tableCaptions,hybrid]{markdown}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=1.5cm]{geometry}
+\usepackage{fullpage}
+\usepackage[numbers]{natbib}
+\usepackage{minted}
+
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+%% You can re-define how links are rendered: uncomment the following to get hyperlinked text instead of footnotes
+
+\usepackage{hyperref}
+%%begin novalidate
+\markdownSetup{rendererPrototypes={
+  link = {\href{#2}{#1}},
+  image = {\begin{figure}[hbt!]
+    \centering
+    \includegraphics{#3}%
+    \ifx\empty#4\empty\else
+    \caption{#4}%
+    \fi
+    \label{fig:#1}%
+    \end{figure}}
+}}
+%%end novalidate
+
+\renewcommand{\tabularxcolumn}[1]{m{#1}}
+
+\let\labelindent\relax
+\usepackage[shortlabels]{enumitem}
+\usepackage{float}
+\setlength{\textfloatsep}{5pt}
+
+\usepackage{datetime}
+\newdateformat{monthdayyeardate}{%
+  \monthname[\THEMONTH]~\THEDAY, \THEYEAR}
+
+\newcommand{\titlestr}{Stop Making Fake Paper}
+\title{\titlestr}
+
+\usepackage{lipsum}
+
+\author{
+	(Add everybody). Dan Fritchman, \IEEEmembership{Member, IEEE} 
+	\thanks{Date of publication \monthdayyeardate\today.}
+	\thanks{D. Fritchman is with the Department of Electrical Engineering and Computer Sciences, University of California, Berkeley, Berkeley, CA 94720 USA (e-mail: dan\_fritchman@berkeley.edu).}
+	\thanks{This work was supported by Professor Sophia Shao.}
+}
+% \date{}
+% \markboth{Proceedings of Something, 2021}{Fritchman, \titlestr}
+% \IEEEpubid{~\copyright~2020 University of California, Berkeley}
+
+\clearpage
+\begin{document}
+\maketitle
+\IEEEpeerreviewmaketitle
+
+\begin{markdown}
+
+% From the Overleaf examples:
+% Including an external \texttt{.md} file, distributed with the \texttt{markdown} package:
+% \markdownInput{example.md}
+% \markdownInput{more.md}
+
+% Our actual content:  
+
+\markdownInput{article.md}
+
+\end{markdown}
+
+% Sadly tables must be in Latex. 
+
+\begin{table}[!ht]
+\caption{Comparison Between A and B} 
+\label{table:comparison}
+\centering
+\begin{tabularx}{\columnwidth}{
+	| >{\centering\arraybackslash}X 
+	| >{\centering\arraybackslash}X 
+	| >{\centering\arraybackslash}X 
+	| >{\centering\arraybackslash}X 
+	| >{\centering\arraybackslash}X 
+	| >{\centering\arraybackslash}X 
+	| >{\centering\arraybackslash}X | }
+	\hline
+	& Dims & Area (µm2) & Freq (GHz) & Power (mW) & Ops/s & Ops/W \\
+	\hline
+	A & 8b 128x128 & 490k & 0.4 & 98.2 & 1638G & 16.7T \\
+	\hline
+	B & 8b 16x16 & 518k & 1.0 & 3177 & 512G & 161G \\
+	\hline
+\end{tabularx}
+\end{table}
+
+\bibliographystyle{ieeetr}
+\bibliography{refs}
+\end{document}

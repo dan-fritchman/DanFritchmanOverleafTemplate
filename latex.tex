@@ -1,0 +1,26 @@
+\documentclass{book}
+\ifx\directlua\undefined
+  \usepackage[english]{babel}
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\else
+  \usepackage{polyglossia}
+  \setmainlanguage{english}
+  \usepackage{fontspec}
+\fi
+\usepackage[
+  hashEnumerators,
+  definitionLists,
+  footnotes,
+  smartEllipses,
+  pipeTables,
+  tableCaptions
+]{markdown}
+\begin{document}
+  \markdownInput{example.md}
+  
+  \begin{markdown}
+This is a **farewell!**
+  \end{markdown}
+\end{document}
