@@ -1,7 +1,7 @@
 
 # Overleaf Template 
 
-For PDF-destined nerd-format writing at overleaf.com.  
+For PDF-destined nerd-format Latex-PDF publication-writing at [overleaf.com](https://www.overleaf.com).  
 
 Uses the [Overleaf Markdown Package](https://www.overleaf.com/learn/latex/Articles/How_to_write_in_Markdown_on_Overleaf) to avoid as much of this Latex insanity as it can. And uses IEEE formatting.  
 

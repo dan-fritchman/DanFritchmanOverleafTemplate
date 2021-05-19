@@ -1,7 +1,7 @@
 
 # Section (H1) 
 
-Paragraph text
+Paragraph text, typical writing in regular ye olde people's English.
 
 ## Sub-Section (H2)
 
@@ -10,13 +10,18 @@ Include a figure with a caption:
 ![homer](fig/homer.png "Homer's Reaction")
 
 Refer to that figure:
-Figure~\ref{fig:homer} shows (blah blah blah)
+
+Figure~\ref{fig:homer} shows (blah blah blah).  
+
+## Another Sub-Section
 
 * Bullet
 * List
 * Without insane Latex nerdery
 
-Citation: [@genc2019gemmini] 
+A horizontal bar (not that we make those):  
+
+---
 
 Code:
 
@@ -30,7 +35,11 @@ module WHY #( /* ... */ );
 endmodule
 ```
 
-Link: [https://github.com/dan-fritchman/NonAnalogComputeInMemory](https://github.com/dan-fritchman/NonAnalogComputeInMemory)
+Citation: [@latexcompanion] 
 
-Tables, sadly, must be specified in Latex and not Markdown. 
+Inline code: `print("...")`  
+
+Link: [overleaf.com](https://www.overleaf.com)  
+
+Tables, sadly, must be specified in Latex and not Markdown. An example below from the template's `main.tex` front-page file. 
 
